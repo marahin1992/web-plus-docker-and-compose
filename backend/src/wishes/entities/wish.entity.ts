@@ -59,9 +59,7 @@ export class Wish {
   @IsInt()
   copied: number;
 
-  @ManyToMany(() => Wishlist, (wishlist) => wishlist.items, {
-    cascade: true, // this is the important line
-  })
+  @ManyToMany(() => Wishlist, (wishlist) => wishlist.items)
   @JoinTable()
   wishlists: Wishlist[];
 }
